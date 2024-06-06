@@ -1,14 +1,14 @@
-# Calculadora IMC
+# BMI Calculator
 Desc
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
 Screenshots
 
-## Tecnologias
+## Tecnologies
 Techs
 
-
+````
 ## License
 ```
 The MIT License (MIT)
