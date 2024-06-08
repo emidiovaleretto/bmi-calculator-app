@@ -3,6 +3,7 @@ package com.comunidadedevspace.imc
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -16,12 +17,22 @@ class MainActivity : AppCompatActivity() {
         val btnCalculate = findViewById<Button>(R.id.btn_calculate)
 
         btnCalculate.setOnClickListener {
-            val weight: Float = weightUserInput.text.toString().toFloat()
-            val height: Float  = heightUserInput.text.toString().toFloat()
 
-            val bmi: Float = weight / (height * height)
+            try {
+                val weight: Float = weightUserInput.text.toString().toFloat()
+                val height: Float  = heightUserInput.text.toString().toFloat()
 
-            println("The BMI is: %.1f.".format(bmi))
+                val bmi: Float = weight / (height * height)
+
+                println("The BMI is: %.1f.".format(bmi))
+            }
+            catch (e: NumberFormatException) {
+                Snackbar.make(
+                    weightUserInput,
+                    "Required fields must be filled in",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
         }
     }
 }
