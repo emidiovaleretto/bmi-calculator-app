@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
             val bmi: Float = weight / (height * height)
 
-            println("The BMI is: ${bmi}")
+            println("The BMI is: %.1f.".format(bmi))
         }
     }
 }
