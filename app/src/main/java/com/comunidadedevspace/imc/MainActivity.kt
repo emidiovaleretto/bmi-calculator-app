@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,13 +21,14 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 val weight: Float = weightUserInput.text.toString().toFloat()
-                val height: Float  = heightUserInput.text.toString().toFloat()
+                val height: Float = heightUserInput.text.toString().toFloat()
 
-                val bmi: Float = weight / (height * height)
+                val bmi = calculateBMI(weight, height)
 
-                println("The BMI is: %.1f.".format(bmi))
-            }
-            catch (e: NumberFormatException) {
+                var intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(BMI_RESULT_KEY, bmi)
+                startActivity(intent)
+            } catch (e: NumberFormatException) {
                 Snackbar.make(
                     weightUserInput,
                     "Required fields must be filled in",
@@ -34,5 +36,9 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+    private fun calculateBMI(weight: Float, height: Float): Float {
+        return weight / (height * height)
     }
 }
