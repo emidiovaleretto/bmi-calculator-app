@@ -28,8 +28,8 @@ This project is an Android native app developed in Kotlin, designed to calculate
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
 
-<img src="assets/docs/app_screenshot_home.png" width="260" />
-<img src="assets/docs/app_screenshot_result.png" width="260" />
+<img src="./app/src/main/assets/docs/app_screenshot_home.png" width="260" />
+<img src="./app/src/main/assets/docs/app_screenshot_result.png" width="260" />
 
 ## Tecnologies
 
