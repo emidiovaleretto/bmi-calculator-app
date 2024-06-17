@@ -48,8 +48,8 @@ This project is an Android native app developed in Kotlin, designed to calculate
   - Buttons
 - SeekBar
 
-````
 ## License
+
 ```
 The MIT License (MIT)
 
